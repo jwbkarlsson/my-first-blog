@@ -3,23 +3,19 @@
       <title>WYBLOG</title>
   </head>
   <body>
+
       <div>
         <h1>Welcome to Wyblog!</h1>
         <p>This is the best blog in the world.</p>
       </div>
 
+  {% for post in posts %}
       <div>
-        <h2>POST 1</h2>
-        <p>published: 14.06.2014, 23:36</p>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
       </div>
-    <div>
-        <h2>POST 2</h2>
-        <p>published 14.09.2018, 23:56</p>
-    </div>
-    <div>
-        <h2>POST 2</h2>
-        <p>published 14.09.2018, 23:59</p>
-    </div>
+  {% endfor %}
 
   </body>
 </html>
